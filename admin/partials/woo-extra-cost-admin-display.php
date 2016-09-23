@@ -52,7 +52,7 @@ class WC_Settings_Extra_Cost {
 	 */
 	public function settings_tab_extra_cost( $tabs ) {
 
-		$tabs['extra_cost_settings'] = __( 'Extra Cost', 'woocommerce-extra-cost' );
+		$tabs['extra_cost_settings'] = __( 'Woo Extra Cost', 'woocommerce-extra-cost' );
 
 		return $tabs;
 

@@ -21,7 +21,7 @@ class Woo_Extra_Cost_Activator {
 	 */
 	public static function activate() {
 		global $wpdb,$woocommerce;
-		
+		set_transient( '_woo_extra_cost_welcome_screen', true, 30 );
 		
 		if( !in_array( 'woocommerce/woocommerce.php',apply_filters('active_plugins',get_option('active_plugins'))) && !is_plugin_active_for_network( 'woocommerce/woocommerce.php' )   ) { 
 			wp_die( "<strong>WooCommerce Extra Cost</strong> Plugin requires <strong>WooCommerce</strong> <a href='".get_admin_url(null, 'plugins.php')."'>Plugins page</a>." );
@@ -38,6 +38,8 @@ class Woo_Extra_Cost_Activator {
 			require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 			dbDelta( $sql );
 			}
+			
+			
 		}
 	}
 

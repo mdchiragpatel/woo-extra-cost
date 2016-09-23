@@ -1,5 +1,6 @@
 jQuery( function() {
 	jQuery('.wc_extra_cost .remove_tax_rates').click(function() {
+		
 		var $tbody = jQuery('.wc_extra_cost').find('tbody');
 		if ( $tbody.find('tr.current').size() > 0 ) {
 			$current = $tbody.find('tr.current');
@@ -21,6 +22,7 @@ jQuery( function() {
 
 
 	jQuery('.wc_extra_cost .insert').click(function() {
+		
 		var $tbody = jQuery('.wc_extra_cost').find('tbody');
 		var size = $tbody.find('tr').size();
 		
@@ -44,5 +46,16 @@ jQuery( function() {
 		}
 
 		return false;
+	});
+	
+		jQuery('body').on( 'click', '.woo-extra-cost-notice .notice-dismiss', function() {
+		
+		jQuery.ajax({
+			url: ajaxurl,
+			data: {
+				action: 'my_dismiss_extra_cost_notice'
+			}
+		})
+
 	});
 });

@@ -143,7 +143,23 @@ class Woo_Extra_Cost {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 		$this->loader->add_action('woocommerce_init', $plugin_admin, 'woo_extra_cost_product_tab');
 		$this->loader->add_action('admin_init', $plugin_admin, 'woo_extra_cost_admin_init_own');
+		$this->loader->add_action('admin_menu', $plugin_admin, 'welcome_screen_pages_extra_cost');
+		$this->loader->add_action('admin_init', $plugin_admin, 'welcome_screen_do_activation_redirect_extra_cost');
+		$this->loader->add_action('admin_head', $plugin_admin, 'welcome_screen_remove_menus_extra_cost');
+		
+		$this->loader->add_action('woocommerce_extra_cost_other_plugins', $plugin_admin, 'woocommerce_extra_cost_other_plugins');
+        $this->loader->add_action('woocommerce_extra_cost_about', $plugin_admin, 'woocommerce_extra_cost_about');
+        $this->loader->add_action('woocommerce_extra_cost_premium_feauter', $plugin_admin, 'woocommerce_extra_cost_premium_feauter');
+        $this->loader->add_action('admin_print_footer_scripts', $plugin_admin, 'woocommerce_extra_cost_pointers_footer');
+		
+		$this->loader->add_action('wp_ajax_my_dismiss_extra_cost_notice', $plugin_admin, 'my_dismiss_extra_cost_notice');
 
+		$get_notice = get_option( 'woo-extra-cost-notice-dismissed' ) ;
+		if( empty($get_notice ) ) {
+			$this->loader->add_action('admin_notices', $plugin_admin, 'admin_notices_extra_cost');
+		}
+		$this->loader->add_action( 'wp_ajax_add_plugin_user_wcec', $plugin_admin, 'wp_add_plugin_userfn_wcec');
+		$this->loader->add_action( 'wp_ajax_hide_subscribe', $plugin_admin, 'hide_subscribe_own');
 	}
 
 	/**
@@ -161,7 +177,7 @@ class Woo_Extra_Cost {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 		$this->loader->add_action( 'woocommerce_cart_calculate_fees', $plugin_public, 'woo_add_cart_fee' );
 		$this->loader->add_action( 'woocommerce_cart_calculate_fees', $plugin_public, 'woo_add_cart_fee_based_on_country' );
-		$this->loader->add_filter( 'woocommerce_paypal_args', $plugin_public, 'paypal_bn_code_filter',99,1 );
+		$this->loader->add_filter( 'woocommerce_paypal_args', $plugin_public, 'paypal_bn_code_filter_woocommerce_extra_cost',99,1 );
 
 	}
 

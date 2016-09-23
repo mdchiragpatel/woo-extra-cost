@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Plugin Name:       Woo Extra Cost
+ * Plugin Name:       WooCommerce Extra Cost
  * Plugin URI:        http://www.multidots.com/
  * Description:       This plugin allows store owner to add extra cost based on product as well as based on country selected.
- * Version:           1.0.0
+ * Version:           1.2.2
  * Author:            Multidots
  * Author URI:        http://www.multidots.com/
  * License:           GPL-2.0+

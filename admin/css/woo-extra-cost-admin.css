@@ -2,3 +2,53 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
+ #wcec_dialog {width:500px; text-align:center; font-size:15px; font-weight:bold;}
+#wcec_dialog p {font-size:15px; font-weight:bold;}
+.free_plugin {
+    margin-bottom: 20px;
+}
+
+.paid_plugin {
+    margin-bottom: 20px;
+}
+
+.paid_plugin h3 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+.free_plugin h3 {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.plug-containter {
+    width: 100%;
+    display: inline-block;
+    margin-left: 20px;
+}
+.plug-containter .contain-section {
+    width: 25%;
+    display: inline-block;
+    margin-top: 30px;
+}
+.plug-containter .contain-section .contain-img {
+    width: 30%;
+    display: inline-block;
+}
+.plug-containter .contain-section .contain-title {
+    width: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+.plug-containter .contain-section .contain-title a {
+    text-decoration: none;
+    line-height: 20px;
+    font-weight: bold;
+}
+.version_logo_img {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
